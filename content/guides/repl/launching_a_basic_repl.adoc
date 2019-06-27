@@ -29,7 +29,7 @@ You should see output like the following:
 
 [source,clojure-repl]
 ----
-Clojure 1.9.0
+Clojure 1.10.1
 user=>
 ----
 
@@ -113,6 +113,6 @@ You should see output like the following:
 
 [source,clojure-repl]
 ----
-Clojure 1.9.0
+Clojure 1.10.1
 user=>
 ----
