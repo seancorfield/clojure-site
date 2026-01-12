@@ -5,6 +5,9 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   published-daily-events:
     runs-on: ubuntu-latest
@@ -45,4 +48,6 @@ jobs:
           then
               git commit -m 'update events'
               git push
+
+              curl -X POST -H "Authorization:token ${{ secrets.GH_TOKEN }}" -H "Accept:application/vnd.github.v3+json" --data '{"event_type":"publish"}'  https://api.github.com/repos/clojure/clojure-org-style/dispatches
           fi
